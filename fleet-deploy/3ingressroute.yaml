@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - app1
   routes:
-    - match: Host(`pakcarik.petra.ac.id`)
+    - match: PathPrefix(`/`) 
       kind: Rule
       services:
         - name: laravel-filament
