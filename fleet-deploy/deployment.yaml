@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: laravel-filament
-        image: darrellcr:laravel-filament:1.0
+        image: darrellcr/laravel-filament:1.0
         ports:
         - containerPort: 80
       #   volumeMounts:
