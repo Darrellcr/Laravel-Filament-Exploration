@@ -18,12 +18,14 @@ spec:
         image: darrellcr/laravel-filament:1.0
         ports:
         - containerPort: 80
-      #   volumeMounts:
-      #   - name: nginx-config-volume
-      #     mountPath: /etc/nginx/nginx.conf
-      #     subPath: nginx.conf
-      # volumes:
-      # - name: nginx-config-volume
-      #   configMap:
-      #     name: nginx
-      #
+        volumeMounts:
+        - name: nas
+          mountPath: /var/www/html/.env
+          subPath: .env
+        - name: nas
+          mountPath: /var/www/html/database/database.sqlite
+          subPath: database/database.sqlite
+      volumes:
+      - name: nas
+        persistentVolumeClaim:
+          claimName: nfs-claim
