@@ -1,8 +1,1 @@
 defaultNamespace: testing-deployment
-
-# Apply everything in this folder into the management cluster
-targets:
-  - name: local
-    clusterSelector:
-      matchLabels:
-        management.cattle.io/cluster-name: local
