@@ -1,0 +1,14 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: web-app
+  namespace: testing-deployment
+spec:
+  entryPoints:
+    - app1
+  routes:
+    - match: Host(`pakcarik.petra.ac.id`)
+      kind: Rule
+      services:
+        - name: laravel-filament
+          port: 80

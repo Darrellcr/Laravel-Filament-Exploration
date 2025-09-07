@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: laravel-filament
+  namespace: testing-deployment
+spec:
+  selector:
+    app: laravel-filament  # Ensure this matches the label of your exporter pods
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80

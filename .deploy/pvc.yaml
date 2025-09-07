@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nfs-claim
+  namespace: testing-deployment
+spec:
+  accessModes:
+    - ReadWriteMany   # NFS supports RWX, so multiple pods can mount
+  resources:
+    requests:
+      storage: 5Gi
+  storageClassName: nfs-client   # must match your StorageClass name
