@@ -23,8 +23,8 @@ spec:
           mountPath: /var/www/html/.env
           subPath: .env
         - name: nas
-          mountPath: /var/www/html/database/database.sqlite
-          subPath: database/database.sqlite
+          mountPath: /var/www/html/database
+          subPath: database
       volumes:
       - name: nas
         persistentVolumeClaim:
