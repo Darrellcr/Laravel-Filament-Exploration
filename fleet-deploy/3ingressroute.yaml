@@ -12,3 +12,7 @@ spec:
       services:
         - name: laravel-filament
           port: 80
+  tls:
+    domains:
+      - main: "pakcarik.petra.ac.id"
+    secretName: tls-rancher-ingress
