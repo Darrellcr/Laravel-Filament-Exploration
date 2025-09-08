@@ -1,0 +1,9 @@
+apiVersion: traefik.io/v1alpha1
+kind: Middleware
+metadata:
+  name: change-header
+  namespace: testing-deployment
+spec:
+  headers:
+    customRequestHeaders:
+      X-Forwarded-Host: "pakcarik.petra.ac.id"

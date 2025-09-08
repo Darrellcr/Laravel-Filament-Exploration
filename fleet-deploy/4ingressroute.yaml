@@ -12,3 +12,5 @@ spec:
       services:
         - name: laravel-filament
           port: 80
+      middlewares:
+        - name: change-header
