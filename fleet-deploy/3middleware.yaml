@@ -7,3 +7,4 @@ spec:
   headers:
     customRequestHeaders:
       X-Forwarded-Host: "pakcarik.petra.ac.id"
+      X-Forwarded-Port: "8081"
