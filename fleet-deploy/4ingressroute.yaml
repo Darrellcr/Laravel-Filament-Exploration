@@ -1,16 +1,35 @@
-apiVersion: traefik.io/v1alpha1
-kind: IngressRoute
+# apiVersion: traefik.io/v1alpha1
+# kind: IngressRoute
+# metadata:
+#   name: web-app
+#   namespace: testing-deployment
+# spec:
+#   entryPoints:
+#     - app1
+#   routes:
+#     - match: PathPrefix(`/`) 
+#       kind: Rule
+#       services:
+#         - name: laravel-filament
+#           port: 80
+#       middlewares:
+#         - name: change-header
+
+apiVersion: networking.k8s.io/v1
+kind: Ingress
 metadata:
   name: web-app
   namespace: testing-deployment
 spec:
-  entryPoints:
-    - app1
-  routes:
-    - match: PathPrefix(`/`) 
-      kind: Rule
-      services:
-        - name: laravel-filament
-          port: 80
-      middlewares:
-        - name: change-header
+  ingressClassName: traefik
+  rules:
+    - host: pakcarik.petra.ac.id
+      http:
+        paths:
+        - backend:
+            service:
+              name: laravel-filament
+              port:
+                number: 80
+          path: /app1
+          pathType: prefix
